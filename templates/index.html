@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!--link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"-->
+  
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4f7a0F6bOg81otVlx_SEctsxVM8llMmy4SqXkh8g2NUw_NrfE7sKgTq0H0au7s2qzNcETgvhue-2qvjPjqiA91JWr5ofYkjqA85q3jmJin2cDbIWiGijwHN0rAF8kVIEVSLESH34fFsHDOAdTT34l71OGDD8GkXY9wn3G9A2-2QSjkAQ8VFmOF8XnBX_bEIJ--sNgvHiVyLg9y-_Qi_lVPbe8BDyJx3Sy_PZ37AGfwVkkecHJf4kksP9xHJLq7pvcn47N7VSv4Je-dJBSpfoNv0CG13kogJLvPqgcQfAH8UqMkORIGKP-EIgnOguaetUzmAyh2_tyTz2Kdv4GwD4uEpuN95BUzya52XUC5YSXsLogdI_vy4_C5csAcpGtGWHrONzOFFWqMd5dCKbaNqN3ArG7jrn-BFB7jsH0XNhZY8STp0PJKgxkyzN8N-FoD6GmA-XvEPX8eYF8-h0_phyhA" charset="UTF-8"></script></head>
+
+<style>
+h1 {text-align: center;}
+img {
+  border: 5px solid #555;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+body {
+  background-color: #ADD8E6;
+}
+
+.temp123
+{
+margin: 0 auto;
+margin-left: auto;
+margin-right: auto;
+text-align:center;
+}
+
+.footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
+</style>
+
+
+
+<body>
+ <div class="login">
+    
+	<h1><b><u>Sentiment Predictor</u></b></h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{'keyword'}}"method="post">
+    <center>
+        <b><label for="keyword" style="color:blue;">Content</label></b>
+    	<input type="text" name="keyword" placeholder="word" required="required" />
+                
+        <button type="submit" class="btn btn-primary btn-block btn-large"  >Submit</button>
+    </center>
+
+   <br>
+   <br>
+   
+   <center><b><u>{{Top_Five_Tweets}}</u></b>
+   {% for s in prediction %}
+        <p>{{s}}<p>
+   {% endfor %}
+   </center>
+   
+</div>
+</form>
+ </div>
+
+
+</body>
+</html>
+
+

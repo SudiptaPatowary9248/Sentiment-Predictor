@@ -1,2 +1,2 @@
-# Sentiment-Predictor
-Predict sentiment of text data
+# Try-Heroku
+Demo app
